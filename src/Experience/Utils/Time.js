@@ -18,6 +18,8 @@ export default class Time extends EventEmitter{
         const currentTime = Date.now();
         this.delta = currentTime - this.current;
         this.current = currentTime;
+        // Get the elapsed time in seconds
+        this.elapsed = (this.current - this.start) * 0.001;
         
         this.trigger('tick');
 
